@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌳 Nature Tree</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .tree {
+      margin-top: 50px;
+    }
+
+    .node {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      font-size: 1.4rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .node:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    .node:active {
+      background-color: #4caf50;
+      transform: scale(1.2);
+    }
+
+    #quoteBox {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-style: italic;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      border-radius: 10px;
+      transition: opacity 0.5s ease;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body id="body" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');">
+
+  <h1>🌳 Nature Tree of Life</h1>
+
+  <div class="tree">
+    <button class="node" onclick="showNature(0)">50</button><br>
+    <button class="node" onclick="showNature(1)">30</button>
+    <button class="node" onclick="showNature(2)">70</button><br>
+    <button class="node" onclick="showNature(3)">20</button>
+    <button class="node" onclick="showNature(4)">40</button>
+    <button class="node" onclick="showNature(5)">60</button>
+    <button class="node" onclick="showNature(6)">80</button>
+  </div>
+
+  <div id="quoteBox">Click a node to reveal a nature quote 🍃</div>
+
+  <footer>
+    -- 💚 by Ananya • Calm Tree Vibes
+  </footer>
+
+  <script>
+    const backgrounds = [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80", // ocean
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1470&q=80", // forest
+      "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1470&q=80", // mountains
+      "https://images.unsplash.com/photo-1505485453164-dc7a37640c72?auto=format&fit=crop&w=1470&q=80", // misty trees
+      "https://images.unsplash.com/photo-1496386460450-3460c690d4f4?auto=format&fit=crop&w=1470&q=80", // grassland
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1470&q=80", // golden light
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1470&q=80"  // river
+    ];
+
+    const quotes = [
+      "“Adopt the pace of nature: her secret is patience.” – Ralph Waldo Emerson",
+      "“Look deep into nature, and then you will understand everything better.” – Albert Einstein",
+      "“In every walk with nature one receives far more than he seeks.” – John Muir",
+      "“The earth has music for those who listen.” – William Shakespeare",
+      "“To sit in the shade on a fine day and look upon verdure is the most perfect refreshment.” – Jane Austen",
+      "“Nature always wears the colors of the spirit.” – Ralph Waldo Emerson",
+      "“And into the forest I go, to lose my mind and find my soul.” – John Muir"
+    ];
+
+    function showNature(index) {
+      document.getElementById('body').style.backgroundImage = `url('${backgrounds[index]}')`;
+      document.getElementById('quoteBox').innerText = quotes[index];
+    }
+  </script>
+
+</body>
+</html>
